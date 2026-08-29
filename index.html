@@ -1,0 +1,2184 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Adi 🪽❤️</title>
+
+<style>
+
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 160, 185, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 40, 90, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #3b393c,
+            #63464f,
+            #913b57,
+            #444145
+        );
+}
+
+
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
+
+#opening {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #b9798c,
+            #704c58 50%,
+            #373639
+        );
+
+    transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease;
+}
+
+#opening.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opening-small {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #ffe8ee;
+
+    margin-bottom: 25px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   ANGEL HEART
+========================================================= */
+
+.angel-heart {
+    position: relative;
+
+    width: 220px;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    animation: heartFloat 4s ease-in-out infinite;
+}
+
+.heart {
+    position: relative;
+    z-index: 5;
+
+    font-size: 105px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px #ffb4c8,
+        0 0 65px #ff4775;
+
+    transition: 0.4s ease;
+}
+
+.angel-heart:hover .heart {
+    transform: scale(1.2);
+}
+
+.angel-heart::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.4),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    animation: glowPulse 2.5s infinite;
+}
+
+
+/* =========================================================
+   WINGS
+========================================================= */
+
+.wing {
+    position: absolute;
+
+    width: 130px;
+    height: 80px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.95),
+            rgba(255,220,230,0.5),
+            transparent 70%
+        );
+
+    opacity: 0.9;
+}
+
+.wing.left {
+    right: 68px;
+
+    transform:
+        rotate(-25deg)
+        skewX(12deg);
+
+    border-radius:
+        100% 20%
+        100% 20%;
+}
+
+.wing.right {
+    left: 68px;
+
+    transform:
+        rotate(25deg)
+        scaleX(-1)
+        skewX(12deg);
+
+    border-radius:
+        100% 20%
+        100% 20%;
+}
+
+
+/* =========================================================
+   OPENING TEXT
+========================================================= */
+
+.open-title {
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 45px;
+
+    font-style: italic;
+}
+
+.date {
+    margin-top: 5px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    color: #ffd4df;
+}
+
+.open-hint {
+    margin-top: 13px;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heartFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%, 100% {
+        transform: scale(0.85);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+#content {
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 2s ease;
+}
+
+#content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.hero-label {
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    color: #ffd0dc;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(65px, 14vw, 125px);
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.hero h1 span {
+    color: #ffafc4;
+}
+
+.hero-date {
+    margin-top: 10px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-style: italic;
+
+    color: #ffcbd7;
+}
+
+.hero p {
+    max-width: 520px;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   PHOTO SECTION
+========================================================= */
+
+.photo-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.photo-label {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #ffd0dc;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   FLOATING 3D PHOTO
+========================================================= */
+
+.photo-wrapper {
+    position: relative;
+
+    cursor: pointer;
+
+    animation:
+        photoFloat 5s ease-in-out infinite;
+
+    transition: 0.5s ease;
+
+    transform-style: preserve-3d;
+}
+
+.photo-wrapper:hover {
+    transform:
+        translateY(-20px)
+        scale(1.04)
+        rotateX(4deg)
+        rotateY(-5deg);
+}
+
+.photo-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.35),
+            rgba(255,100,150,0.12),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    z-index: -1;
+}
+
+.photo-wrapper::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: -25px;
+    bottom: -20px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d33e61;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.35);
+}
+
+.photo-wrapper img {
+    width:
+        min(78vw, 390px);
+
+    height:
+        min(100vw, 500px);
+
+    object-fit: cover;
+
+    padding: 7px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #ffb5c8
+        );
+
+    box-shadow:
+        0 35px 90px
+        rgba(0,0,0,0.55),
+
+        0 0 60px
+        rgba(255,130,170,0.22);
+
+    transform:
+        translateZ(25px);
+}
+
+@keyframes photoFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(1deg);
+    }
+}
+
+.photo-caption {
+    margin-top: 40px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 27px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   THREE CHOICES
+========================================================= */
+
+#choices {
+    position: fixed;
+    inset: 0;
+
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(25,18,22,0.82);
+
+    backdrop-filter: blur(16px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.6s ease;
+}
+
+#choices.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.choices-container {
+    width:
+        min(900px,92vw);
+
+    text-align: center;
+}
+
+.choices-title {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 48px;
+
+    font-style: italic;
+
+    margin-bottom: 8px;
+}
+
+.choices-subtitle {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.6;
+
+    margin-bottom: 40px;
+}
+
+.choice-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 24px;
+}
+
+.choice {
+    min-height: 190px;
+
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 26px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.17),
+            rgba(255,90,130,0.08)
+        );
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(0,0,0,0.3),
+
+        inset 0 1px
+        rgba(255,255,255,0.15);
+
+    cursor: pointer;
+
+    transition:
+        0.5s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+.choice:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+.choice:nth-child(2) {
+    transform: translateY(-15px);
+}
+
+.choice:nth-child(3) {
+    transform: rotate(3deg);
+}
+
+.choice:hover {
+    transform:
+        translateY(-20px)
+        scale(1.06)
+        rotate(0deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,190,210,0.25),
+            rgba(255,70,110,0.12)
+        );
+
+    box-shadow:
+        0 35px 70px
+        rgba(0,0,0,0.45),
+
+        0 0 35px
+        rgba(255,140,170,0.25);
+}
+
+.choice-icon {
+    font-size: 45px;
+
+    margin-bottom: 18px;
+}
+
+.choice h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 29px;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.choice p {
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    opacity: 0.6;
+}
+
+.close-choices {
+    margin-top: 30px;
+
+    padding:
+        11px 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 4000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(20,15,18,0.92);
+
+    backdrop-filter: blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.5s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-box {
+    width:
+        min(700px,92vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding:
+        50px 40px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.12),
+            rgba(160,50,80,0.15)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.5);
+}
+
+.modal-icon {
+    font-size: 55px;
+
+    margin-bottom: 12px;
+}
+
+.modal-box h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 52px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    margin:
+        15px 0 25px;
+}
+
+.modal-box p {
+    font-size: 14px;
+
+    line-height: 2;
+
+    color: #f8e7eb;
+
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    margin-top: 20px;
+
+    padding:
+        12px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #d65372;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.music-icon {
+    width: 95px;
+    height: 95px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb4c8,
+            #a72e50
+        );
+
+    font-size: 35px;
+}
+
+.music-icon.playing {
+    animation:
+        musicPulse 2s infinite;
+}
+
+@keyframes musicPulse {
+
+    0%, 100% {
+        box-shadow:
+            0 0 25px
+            rgba(255,130,170,0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 70px
+            rgba(255,130,170,0.8);
+    }
+}
+
+.song-title {
+    color: #ffc0cf;
+
+    font-size: 12px;
+}
+
+#musicButton,
+#modalMusicButton {
+    margin-top: 25px;
+
+    padding:
+        13px 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LYRICS
+========================================================= */
+
+.lyrics {
+    margin-top: 45px;
+
+    min-height: 160px;
+
+    max-width: 600px;
+}
+
+.lyrics-title {
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #ffb9c9;
+
+    margin-bottom: 25px;
+}
+
+.lyric {
+    display: none;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 27px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color: #ffe8ed;
+
+    animation:
+        lyricAppear 1s ease;
+}
+
+.lyric.active {
+    display: block;
+}
+
+@keyframes lyricAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.final {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.final-wing {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.final h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(60px,11vw,100px);
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.final p {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    opacity: 0.7;
+}
+
+.final-love {
+    margin-top: 40px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 38px;
+
+    font-style: italic;
+
+    color: #ffb3c6;
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.particle {
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    animation:
+        rise linear forwards;
+}
+
+@keyframes rise {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0);
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .open-title {
+        font-size: 38px;
+    }
+
+    .choice-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .choice {
+        min-height: 120px;
+        padding: 20px;
+    }
+
+    .choice:nth-child(1),
+    .choice:nth-child(2),
+    .choice:nth-child(3) {
+        transform: none;
+    }
+
+    .choice-icon {
+        font-size: 32px;
+        margin-bottom: 7px;
+    }
+
+    .choice h3 {
+        font-size: 25px;
+    }
+
+    .choices-title {
+        font-size: 38px;
+    }
+
+    .modal-box {
+        padding: 40px 25px;
+    }
+
+    .modal-box h2 {
+        font-size: 43px;
+    }
+
+    .lyric {
+        font-size: 22px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     OPENING
+======================================================= -->
+
+<section id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-small">
+            A little surprise for you
+        </div>
+
+        <div
+            class="angel-heart"
+            id="openHeart"
+        >
+
+            <div class="wing left"></div>
+
+            <div class="wing right"></div>
+
+            <div class="heart">
+                ♡
+            </div>
+
+        </div>
+
+        <div class="open-title">
+            For My Adi
+        </div>
+
+        <div class="date">
+            August 29, 2026
+        </div>
+
+        <div class="open-hint">
+            TAP THE HEART
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<div id="content">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-label">
+            A LITTLE PIECE OF MY HEART
+        </div>
+
+        <h1>
+            For <span>Adi</span>
+        </h1>
+
+        <div class="hero-date">
+            August 29, 2026
+        </div>
+
+        <p>
+            Some people come into our lives
+            and quietly become our favorite part
+            of it.
+        </p>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PHOTO
+    ==================================================== -->
+
+    <section class="photo-section">
+
+        <div class="photo-label">
+            ONE SPECIAL MEMORY
+        </div>
+
+        <div
+            class="photo-wrapper"
+            id="photoButton"
+        >
+
+            <!--
+                IMPORTANT:
+
+                Put your picture in the same folder
+                as index.html.
+
+                Rename it:
+
+                our-photo.jpg
+            -->
+
+            <img
+                src="our-photo.jpg"
+                alt="Our special memory"
+            >
+
+        </div>
+
+        <div class="photo-caption">
+            Tap our picture... ❤️
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         MUSIC
+    ==================================================== -->
+
+    <section class="music-section">
+
+        <div
+            class="music-icon"
+            id="musicIcon"
+        >
+            ♫
+        </div>
+
+        <div class="song-title">
+            Can't Help Falling in Love
+        </div>
+
+        <button id="musicButton">
+            ▶ Play Our Song
+        </button>
+
+        <!--
+            Put your MP3 in this same folder.
+
+            Rename it:
+
+            our-song.mp3
+        -->
+
+        <audio
+            id="music"
+            loop
+        >
+
+            <source
+                src="our-song.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+
+        <!-- LYRICS -->
+
+        <div class="lyrics">
+
+            <div class="lyrics-title">
+                OUR SONG
+            </div>
+
+            <!--
+                Replace these placeholders with lyrics
+                you are authorized to publish.
+            -->
+
+            <div class="lyric active">
+                ❤️ Our song begins here...
+            </div>
+
+            <div class="lyric">
+                A beautiful song for a beautiful person.
+            </div>
+
+            <div class="lyric">
+                Every note reminds me of you.
+            </div>
+
+            <div class="lyric">
+                Some memories are meant to stay forever.
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FINAL
+    ==================================================== -->
+
+    <section class="final">
+
+        <div class="final-wing">
+            🪽
+        </div>
+
+        <h2>
+            I Love You
+        </h2>
+
+        <p>
+            Out of all the people I could have met,
+            I'm thankful that I met you.
+
+            And out of all the memories I could keep,
+            you're the one I want to keep forever.
+        </p>
+
+        <div class="final-love">
+            Forever & Always, Adi ❤️
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =======================================================
+     THREE CHOICES
+======================================================= -->
+
+<div id="choices">
+
+    <div class="choices-container">
+
+        <div class="choices-title">
+            For My Adi
+        </div>
+
+        <div class="choices-subtitle">
+            CHOOSE A LITTLE PIECE OF MY HEART
+        </div>
+
+
+        <div class="choice-grid">
+
+
+            <!-- LETTER -->
+
+            <div
+                class="choice"
+                id="letterChoice"
+            >
+
+                <div class="choice-icon">
+                    💌
+                </div>
+
+                <h3>
+                    A Letter
+                </h3>
+
+                <p>
+                    WORDS FROM MY HEART
+                </p>
+
+            </div>
+
+
+            <!-- SONG -->
+
+            <div
+                class="choice"
+                id="songChoice"
+            >
+
+                <div class="choice-icon">
+                    🎵
+                </div>
+
+                <h3>
+                    Our Song
+                </h3>
+
+                <p>
+                    TAP TO START THE MUSIC
+                </p>
+
+            </div>
+
+
+            <!-- LOVE -->
+
+            <div
+                class="choice"
+                id="loveChoice"
+            >
+
+                <div class="choice-icon">
+                    🪽
+                </div>
+
+                <h3>
+                    My Love
+                </h3>
+
+                <p>
+                    ONE LAST MESSAGE
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="close-choices"
+            id="closeChoices"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     LETTER
+======================================================= -->
+
+<div
+    class="modal"
+    id="letterModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            💌
+        </div>
+
+        <div class="date">
+            August 29, 2026
+        </div>
+
+        <h2>
+            My Dear Adi
+        </h2>
+
+        <p>
+            I don't know if words will ever be enough
+            to explain how much you mean to me,
+            but I still want to try.
+        </p>
+
+        <p>
+            Thank you for every smile,
+            every laugh, every conversation,
+            and every little moment
+            that became a beautiful memory.
+        </p>
+
+        <p>
+            You have a way of making ordinary moments
+            feel extraordinary.
+        </p>
+
+        <p>
+            If I had the chance to choose again,
+            among all the people in this world,
+            I would still choose you.
+        </p>
+
+        <p>
+            You are my favorite person,
+            my favorite memory,
+            and one of the most beautiful
+            parts of my life.
+        </p>
+
+        <p
+            style="
+                color:#ffb3c6;
+                font-family:'Cormorant Garamond',serif;
+                font-size:30px;
+                font-style:italic;
+            "
+        >
+            I love you, Adi. ❤️
+        </p>
+
+        <button
+            class="modal-close"
+            data-close="letterModal"
+        >
+            Close ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     SONG MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="songModal"
+>
+
+    <div class="modal-box">
+
+        <div
+            class="music-icon"
+            id="modalMusicIcon"
+        >
+            ♫
+        </div>
+
+        <div class="date">
+            August 29, 2026
+        </div>
+
+        <h2>
+            Our Song
+        </h2>
+
+        <div class="song-title">
+            Can't Help Falling in Love
+        </div>
+
+        <button id="modalMusicButton">
+            ▶ Play Our Song
+        </button>
+
+
+        <div class="lyrics">
+
+            <div class="lyrics-title">
+                OUR SONG
+            </div>
+
+            <!--
+                Add lyrics here only if you have
+                permission to publish them.
+            -->
+
+            <div class="lyric modal-lyric active">
+                ❤️ Our song begins here...
+            </div>
+
+            <div class="lyric modal-lyric">
+                A beautiful song for a beautiful person.
+            </div>
+
+            <div class="lyric modal-lyric">
+                Every note reminds me of you.
+            </div>
+
+            <div class="lyric modal-lyric">
+                Some memories are meant to stay forever.
+            </div>
+
+        </div>
+
+
+        <button
+            class="modal-close"
+            data-close="songModal"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     LOVE MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="loveModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            🪽
+        </div>
+
+        <div class="date">
+            August 29, 2026
+        </div>
+
+        <h2>
+            My Love
+        </h2>
+
+        <p>
+            If love had a place,
+            I think mine would be wherever
+            you are.
+        </p>
+
+        <p>
+            If I could keep one moment forever,
+            it would be one where I'm with you.
+        </p>
+
+        <p>
+            And if I could make one promise,
+            it would be that I will always treasure
+            the memories we've made.
+        </p>
+
+        <p
+            style="
+                color:#ffb3c6;
+                font-family:'Cormorant Garamond',serif;
+                font-size:30px;
+                font-style:italic;
+            "
+        >
+            I love you, Adi. ❤️
+        </p>
+
+        <button
+            class="modal-close"
+            data-close="loveModal"
+        >
+            Close 🪽
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const opening =
+    document.getElementById("opening");
+
+const content =
+    document.getElementById("content");
+
+const openHeart =
+    document.getElementById("openHeart");
+
+const photoButton =
+    document.getElementById("photoButton");
+
+const choices =
+    document.getElementById("choices");
+
+const closeChoices =
+    document.getElementById("closeChoices");
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicIcon =
+    document.getElementById("musicIcon");
+
+const modalMusicButton =
+    document.getElementById("modalMusicButton");
+
+const modalMusicIcon =
+    document.getElementById("modalMusicIcon");
+
+const songChoice =
+    document.getElementById("songChoice");
+
+const letterChoice =
+    document.getElementById("letterChoice");
+
+const loveChoice =
+    document.getElementById("loveChoice");
+
+
+/* =========================================================
+   OPENING HEART
+========================================================= */
+
+openHeart.addEventListener("click", function() {
+
+    opening.classList.add("hide");
+
+    setTimeout(function() {
+
+        content.classList.add("show");
+
+    }, 400);
+
+});
+
+
+/* =========================================================
+   PHOTO → THREE CHOICES
+========================================================= */
+
+photoButton.addEventListener("click", function() {
+
+    choices.classList.add("active");
+
+});
+
+
+/* =========================================================
+   CLOSE THREE CHOICES
+========================================================= */
+
+closeChoices.addEventListener("click", function() {
+
+    choices.classList.remove("active");
+
+});
+
+
+/* =========================================================
+   OPEN MODAL
+========================================================= */
+
+function openModal(id) {
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal(id) {
+
+    document
+        .getElementById(id)
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+letterChoice.addEventListener("click", function() {
+
+    choices.classList.remove("active");
+
+    openModal("letterModal");
+
+});
+
+
+/* =========================================================
+   LOVE
+========================================================= */
+
+loveChoice.addEventListener("click", function() {
+
+    choices.classList.remove("active");
+
+    openModal("loveModal");
+
+});
+
+
+/* =========================================================
+   SONG
+========================================================= */
+
+songChoice.addEventListener("click", function() {
+
+    choices.classList.remove("active");
+
+    openModal("songModal");
+
+    startMusic();
+
+});
+
+
+/* =========================================================
+   START MUSIC
+========================================================= */
+
+function startMusic() {
+
+    music.play()
+        .then(function() {
+
+            musicButton.innerHTML =
+                "❚❚ Pause Our Song";
+
+            modalMusicButton.innerHTML =
+                "❚❚ Pause Our Song";
+
+            musicIcon.classList.add("playing");
+
+            modalMusicIcon.classList.add("playing");
+
+        })
+        .catch(function(error) {
+
+            console.log(
+                "Browser blocked automatic playback:",
+                error
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   PAUSE MUSIC
+========================================================= */
+
+function pauseMusic() {
+
+    music.pause();
+
+    musicButton.innerHTML =
+        "▶ Play Our Song";
+
+    modalMusicButton.innerHTML =
+        "▶ Play Our Song";
+
+    musicIcon.classList.remove("playing");
+
+    modalMusicIcon.classList.remove("playing");
+
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+musicButton.addEventListener("click", function() {
+
+    if (music.paused) {
+
+        startMusic();
+
+    } else {
+
+        pauseMusic();
+
+    }
+
+});
+
+
+modalMusicButton.addEventListener("click", function() {
+
+    if (music.paused) {
+
+        startMusic();
+
+    } else {
+
+        pauseMusic();
+
+    }
+
+});
+
+
+/* =========================================================
+   LYRIC TIMING
+========================================================= */
+
+/*
+   Change these numbers to match your song.
+
+   These are seconds.
+
+   Example:
+
+   0  = first line
+   8  = second line
+   17 = third line
+   25 = fourth line
+
+   Add more if you add more authorized lyrics.
+*/
+
+const lyricTimes = [
+    0,
+    8,
+    17,
+    25
+];
+
+
+const lyrics =
+    document.querySelectorAll(
+        ".lyric:not(.modal-lyric)"
+    );
+
+
+const modalLyrics =
+    document.querySelectorAll(
+        ".modal-lyric"
+    );
+
+
+music.addEventListener("timeupdate", function() {
+
+    let currentIndex = 0;
+
+    for (
+        let i = 0;
+        i < lyricTimes.length;
+        i++
+    ) {
+
+        if (
+            music.currentTime >=
+            lyricTimes[i]
+        ) {
+
+            currentIndex = i;
+
+        }
+
+    }
+
+
+    lyrics.forEach(function(lyric, index) {
+
+        lyric.classList.toggle(
+            "active",
+            index === currentIndex
+        );
+
+    });
+
+
+    modalLyrics.forEach(function(lyric, index) {
+
+        lyric.classList.toggle(
+            "active",
+            index === currentIndex
+        );
+
+    });
+
+});
+
+
+/* =========================================================
+   CLOSE BUTTONS
+========================================================= */
+
+document
+    .querySelectorAll(".modal-close")
+    .forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            closeModal(
+                button.dataset.close
+            );
+
+        });
+
+    });
+
+
+/* =========================================================
+   CLICK OUTSIDE MODAL
+========================================================= */
+
+document
+    .querySelectorAll(".modal")
+    .forEach(function(modal) {
+
+        modal.addEventListener("click", function(event) {
+
+            if (event.target === modal) {
+
+                modal.classList.remove("active");
+
+            }
+
+        });
+
+    });
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        choices.classList.remove("active");
+
+        document
+            .querySelectorAll(".modal")
+            .forEach(function(modal) {
+
+                modal.classList.remove("active");
+
+            });
+
+    }
+
+});
+
+
+/* =========================================================
+   FLOATING ANGEL PARTICLES
+========================================================= */
+
+function createParticle() {
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+
+    const symbols = [
+        "♡",
+        "✦",
+        "✧",
+        "·",
+        "🪽"
+    ];
+
+
+    particle.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+
+    particle.style.left =
+        Math.random() * 100 + "vw";
+
+
+    particle.style.fontSize =
+        (
+            8 +
+            Math.random() * 15
+        ) + "px";
+
+
+    const duration =
+        7 +
+        Math.random() * 8;
+
+
+    particle.style.animationDuration =
+        duration + "s";
+
+
+    document.body.appendChild(
+        particle
+    );
+
+
+    setTimeout(function() {
+
+        particle.remove();
+
+    }, duration * 1000);
+
+}
+
+
+setInterval(
+    createParticle,
+    700
+);
+
+</script>
+
+</body>
+</html>
+```
